@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4741239353686160091}
   - component: {fileID: 4741239353686160090}
   - component: {fileID: -2433143876208182836}
+  - component: {fileID: 883396449402480876}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -115,6 +116,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &883396449402480876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4741239353686160089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 007a275a649707d40a97f5fff3943eed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8400882546514136056
 PrefabInstance:
   m_ObjectHideFlags: 0

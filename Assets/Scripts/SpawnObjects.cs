@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnObjects : MonoBehaviour
 {
-    [SerializeField] private GameObject _spawnObject;
+    [SerializeField] private Enemy _spawnObject;
     [SerializeField] private bool _isSpawning;
     [SerializeField] private float _delay;
 
@@ -21,7 +21,7 @@ public class SpawnObjects : MonoBehaviour
     {
         _points = new List<Transform>();
 
-        for (int i = 0; i < gameObject.transform.childCount; i++)
+        for (int i = 0; i < transform.childCount; i++)
             _points.Add(gameObject.transform.GetChild(i));
     }
 
@@ -38,6 +38,5 @@ public class SpawnObjects : MonoBehaviour
             }
             _currentPoint = 0;
         }
-        StopCoroutine(Spawn(_delay));
     }
 }

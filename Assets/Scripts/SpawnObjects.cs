@@ -5,6 +5,8 @@ using UnityEngine;
 public class SpawnObjects : MonoBehaviour
 {
     [SerializeField] private GameObject _spawnObject;
+    [SerializeField] private bool _isSpawning;
+    [SerializeField] private float _delay;
 
     private List<Transform> _points;
     private int _currentPoint;
@@ -12,7 +14,7 @@ public class SpawnObjects : MonoBehaviour
     private void Start()
     {
         GetPointsSpawn();
-        StartCoroutine(Spawn());
+        StartCoroutine(Spawn(_delay));
     }
 
     private void GetPointsSpawn()
@@ -23,12 +25,11 @@ public class SpawnObjects : MonoBehaviour
             _points.Add(gameObject.transform.GetChild(i));
     }
 
-    private IEnumerator Spawn()
+    private IEnumerator Spawn(float delay)
     {
-        float delay = 5;
         WaitForSeconds waitForSeconds = new WaitForSeconds(delay);
 
-        while (true)
+        while (_isSpawning)
         {
             for (_currentPoint = 0; _currentPoint < _points.Count; _currentPoint++)
             {
@@ -36,6 +37,7 @@ public class SpawnObjects : MonoBehaviour
                 yield return waitForSeconds;
             }
             _currentPoint = 0;
-        } 
+        }
+        StopCoroutine(Spawn(_delay));
     }
 }

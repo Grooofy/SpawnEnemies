@@ -453,7 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 143e9b94d5f125d45ac563bf594f0690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnObject: {fileID: 883396449402480876, guid: 6cadb311a3c8ba04f88bf3eae8e09670, type: 3}
+  _prefab: {fileID: 883396449402480876, guid: 6cadb311a3c8ba04f88bf3eae8e09670, type: 3}
   _isSpawning: 1
   _delay: 2
 --- !u!1 &1544196495

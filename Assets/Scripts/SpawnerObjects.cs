@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnObjects : MonoBehaviour
+public class SpawnerObjects : MonoBehaviour
 {
-    [SerializeField] private Enemy _spawnObject;
+    [SerializeField] private Enemy _prefab;
     [SerializeField] private bool _isSpawning;
     [SerializeField] private float _delay;
 
@@ -13,11 +13,11 @@ public class SpawnObjects : MonoBehaviour
 
     private void Start()
     {
-        GetPointsSpawn();
+        CreatePointsSpawn();
         StartCoroutine(Spawn(_delay));
     }
 
-    private void GetPointsSpawn()
+    private void CreatePointsSpawn()
     {
         _points = new List<Transform>();
 
@@ -33,7 +33,7 @@ public class SpawnObjects : MonoBehaviour
         {
             for (_currentPoint = 0; _currentPoint < _points.Count; _currentPoint++)
             {
-                Instantiate(_spawnObject, _points[_currentPoint]);
+                Instantiate(_prefab, _points[_currentPoint]);
                 yield return waitForSeconds;
             }
             _currentPoint = 0;
